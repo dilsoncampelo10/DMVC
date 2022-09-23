@@ -2,8 +2,10 @@
 
 namespace src\controllers;
 
-class ErrorController{
+use core\Controller;
+
+class ErrorController extends Controller{
     public function index(){
-        echo "Erro";
+        $this->redirect('404');
     }
 }

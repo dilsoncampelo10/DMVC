@@ -2,8 +2,10 @@
 
 namespace src\controllers;
 
-class HomeController{
+use core\Controller;
+
+class HomeController extends Controller{
     public function index(){
-        echo "Oi";
+        $this->redirect('home');
     }
 }
