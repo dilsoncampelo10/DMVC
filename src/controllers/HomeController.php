@@ -6,6 +6,10 @@ use core\Controller;
 
 class HomeController extends Controller{
     public function index(){
-        $this->redirect('home');
+        $data = [
+            'name' => 'Dilson'
+        ];
+
+        $this->redirect('home',$data);
     }
 }

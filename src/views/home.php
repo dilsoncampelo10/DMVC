@@ -7,6 +7,6 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Seja bem-vindo</h1>
+    <h1>Seja bem-vindo <?=$data['name']?></h1>
 </body>
 </html>
