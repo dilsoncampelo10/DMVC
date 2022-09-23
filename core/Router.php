@@ -25,19 +25,17 @@ class Router {
                 }
             }
         }
-       
+         
+        if(!file_exists('../src/controllers/'.$currentController.'.php') || !method_exists('src\\controllers\\'.$currentController,$currentAction)){
+            $currentController = 'ErrorController';
+            $currentAction = 'index';
 
-        // echo $currentController.'<br>';
-
-        // echo $currentAction.'<br>';
-
-       // var_dump($params);
+        }
 
         $newController = 'src\\controllers\\'.$currentController;
-        $c = new $newController();
-        // echo $newController;
-        call_user_func_array([$c,$currentAction],$params);
 
-        
+        $c = new $newController();
+    
+        call_user_func_array([$c,$currentAction],$params);
     }
 }
