@@ -11,7 +11,7 @@ class Model{
     public function __construct()
     {
         try{
-            $this->con = new PDO(Config::DB_DRIVER.'dbname='.Config::DB_NAME.';'.Config::DB_HOST,Config::DB_USER,Config::DB_PASS); 
+            $this->con = new PDO(Config::DB_DRIVER.':dbname='.Config::DB_NAME.';'.Config::DB_HOST,Config::DB_USER,Config::DB_PASS); 
         } catch(PDOException $e){
             echo 'Problemas com conexão: '.$e->getMessage();
         }
